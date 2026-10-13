@@ -11,8 +11,8 @@ let introTimer;
 function closeIntro(){intro.classList.add('dismissed');clearTimeout(introTimer);}
 document.querySelector('.skip').addEventListener('click',closeIntro);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeIntro()});
-introTimer=setTimeout(closeIntro,matchMedia('(prefers-reduced-motion: reduce)').matches?600:3400);
-document.querySelector('#replay').addEventListener('click',e=>{e.preventDefault();intro.classList.remove('dismissed');introTimer=setTimeout(closeIntro,3400)});
+introTimer=setTimeout(closeIntro,matchMedia('(prefers-reduced-motion: reduce)').matches?600:4200);
+document.querySelector('#replay').addEventListener('click',e=>{e.preventDefault();intro.classList.remove('dismissed');intro.classList.add('restarting');void intro.offsetWidth;intro.classList.remove('restarting');introTimer=setTimeout(closeIntro,4200)});
 const quotes=[['ADA','0.23755','−2.14%'],['BNB','745.26','−0.07%'],['BTC','83,655.76','+1.18%'],['DOGE','0.084775','−0.40%'],['ETH','2,522.38','−0.01%'],['HYPE','81.77','−3.09%'],['LINK','13.03','+0.06%'],['LIT','3.35','−6.96%'],['MANA','0.09245','−2.32%'],['SOL','107.87','−0.96%'],['XRP','1.38','−0.20%'],['AAOIB','97.64','−4.41%']];
 document.querySelector('#ticker').innerHTML=quotes.map(([name,price,change])=>`<div class="asset"><strong>${name}</strong><div>$${price}</div><small class="${change.startsWith('+')?'positive':''}">${change}</small></div>`).join('');
 const sheets=[...document.querySelectorAll('.sheet')];let queued=false;
