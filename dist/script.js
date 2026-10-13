@@ -1,4 +1,12 @@
 const intro=document.querySelector('.intro');
+const gifToggle=document.querySelector('.gif-toggle');
+const tradingFloor=document.querySelector('#trading-floor');
+gifToggle.addEventListener('click',()=>{
+  const paused=gifToggle.getAttribute('aria-pressed')!=='true';
+  tradingFloor.src=paused?'assets/trading-floor-still.png':'assets/trading-floor.gif';
+  gifToggle.setAttribute('aria-pressed',String(paused));
+  gifToggle.textContent=paused?'Play animation ▷':'Pause animation Ⅱ';
+});
 let introTimer;
 function closeIntro(){intro.classList.add('dismissed');clearTimeout(introTimer);}
 document.querySelector('.skip').addEventListener('click',closeIntro);

@@ -10,4 +10,4 @@ Importa este repositorio como proyecto. `vercel.json` configura `dist` como dire
 
 Sirve la carpeta `dist` con cualquier servidor HTTP estático. Los archivos principales son `index.html`, `style.css` y `script.js`.
 
-Las cotizaciones son ejemplos estáticos proporcionados en el brief. Los botones llevan a undeadwallet.com. La tipografía se carga desde Google Fonts y la foto desde undeadwallet.com.
+Las cotizaciones son ejemplos estáticos proporcionados en el brief. Los botones llevan a undeadwallet.com. La tipografía se carga desde Google Fonts. La escena de pixel art se sirve como GIF local, con imagen estática para movimiento reducido y control de pausa.
